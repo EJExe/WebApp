@@ -1,0 +1,17 @@
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ProjectManagement.Application.csproj.AssemblyReference.cache
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ProjectManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ProjectManagement.Application.AssemblyInfoInputs.cache
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ProjectManagement.Application.AssemblyInfo.cs
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ProjectManagement.Application.csproj.CoreCompileInputs.cache
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\bin\Debug\net8.0\ProjectManagement.Application.deps.json
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\bin\Debug\net8.0\ProjectManagement.Application.dll
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\bin\Debug\net8.0\ProjectManagement.Application.pdb
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\bin\Debug\net8.0\ProjectManagement.Domain.dll
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\bin\Debug\net8.0\ProjectManagement.Infrastructure.dll
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\bin\Debug\net8.0\ProjectManagement.Domain.pdb
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\bin\Debug\net8.0\ProjectManagement.Infrastructure.pdb
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ProjectM.6FAF72D3.Up2Date
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ProjectManagement.Application.dll
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\refint\ProjectManagement.Application.dll
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ProjectManagement.Application.pdb
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ref\ProjectManagement.Application.dll

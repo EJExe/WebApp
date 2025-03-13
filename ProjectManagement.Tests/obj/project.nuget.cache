@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "SkyQnHQ+RaL3fkegQj28BdM13YEpDEw2o74QRaExW/eE8rMyTmtT+DyWMsjH1ke6L3GrDeNuREdxQuJfJILddQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mrlas\\OneDrive\\Рабочий стол\\3КУРС\\3.2\\Садыков\\ASPNETCore\\ProjectManagement.Tests\\ProjectManagement.Tests.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mrlas\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.2\\microsoft.entityframeworkcore.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.2\\microsoft.entityframeworkcore.abstractions.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.2\\microsoft.entityframeworkcore.analyzers.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\9.0.2\\microsoft.entityframeworkcore.inmemory.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.2\\microsoft.extensions.caching.abstractions.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.2\\microsoft.extensions.caching.memory.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.2\\microsoft.extensions.dependencyinjection.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.2\\microsoft.extensions.dependencyinjection.abstractions.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.logging\\9.0.2\\microsoft.extensions.logging.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.2\\microsoft.extensions.logging.abstractions.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.options\\9.0.2\\microsoft.extensions.options.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.2\\microsoft.extensions.primitives.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.net.test.sdk\\17.8.0\\microsoft.net.test.sdk.17.8.0.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.8.0\\microsoft.testplatform.objectmodel.17.8.0.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.testplatform.testhost\\17.8.0\\microsoft.testplatform.testhost.17.8.0.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\mstest.testadapter\\3.1.1\\mstest.testadapter.3.1.1.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\mstest.testframework\\3.1.1\\mstest.testframework.3.1.1.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\nuget.frameworks\\6.5.0\\nuget.frameworks.6.5.0.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.2\\system.diagnostics.diagnosticsource.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}

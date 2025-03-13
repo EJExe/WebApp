@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "Wu/zE3UUfURxWhV/Ft67ZOOjSqSUvmQMNOdHLcolt3EgopxC53bmRKCIyCie8bvMEFh3nh7fF41tYy7NKT8l+A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mrlas\\OneDrive\\Рабочий стол\\3КУРС\\3.2\\Садыков\\ASPNETCore\\ProjectManagement.Infrastructure\\ProjectManagement.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.2\\microsoft.entityframeworkcore.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.2\\microsoft.entityframeworkcore.abstractions.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.2\\microsoft.entityframeworkcore.analyzers.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\9.0.2\\microsoft.entityframeworkcore.inmemory.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.2\\microsoft.extensions.caching.abstractions.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.2\\microsoft.extensions.caching.memory.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.2\\microsoft.extensions.dependencyinjection.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.2\\microsoft.extensions.dependencyinjection.abstractions.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.logging\\9.0.2\\microsoft.extensions.logging.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.2\\microsoft.extensions.logging.abstractions.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.options\\9.0.2\\microsoft.extensions.options.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.2\\microsoft.extensions.primitives.9.0.2.nupkg.sha512",
+    "C:\\Users\\mrlas\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.2\\system.diagnostics.diagnosticsource.9.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

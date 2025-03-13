@@ -1,0 +1,6 @@
+@Lising_HostAddress = http://localhost:5073
+
+GET {{Lising_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
