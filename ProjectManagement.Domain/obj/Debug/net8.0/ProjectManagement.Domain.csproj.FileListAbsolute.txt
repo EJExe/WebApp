@@ -10,3 +10,5 @@ C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASP
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\Debug\net8.0\refint\ProjectManagement.Domain.dll
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\Debug\net8.0\ProjectManagement.Domain.pdb
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\Debug\net8.0\ref\ProjectManagement.Domain.dll
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\bin\Debug\net8.0\ProjectManagement.Domain.runtimeconfig.json
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\Debug\net8.0\ProjectManagement.Domain.genruntimeconfig.cache

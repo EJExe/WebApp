@@ -3,40 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|c:\\users\\mrlas\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u043A\u0443\u0440\u0441\\3.2\\\u0441\u0430\u0434\u044B\u043A\u043E\u0432\\aspnetcore\\lising\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|solutionrelative:lising\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\lising\\controllers\\carscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|solutionrelative:lising\\controllers\\carscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\lising\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|solutionrelative:lising\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A5EC659-3279-4CDA-AD31-16CE2BC88520}|ProjectManagement.Infrastructure\\ProjectManagement.Infrastructure.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\projectmanagement.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A5EC659-3279-4CDA-AD31-16CE2BC88520}|ProjectManagement.Infrastructure\\ProjectManagement.Infrastructure.csproj|solutionrelative:projectmanagement.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\projectmanagement.domain\\entities\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|solutionrelative:projectmanagement.domain\\entities\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\lising\\controllers\\carscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|solutionrelative:lising\\controllers\\carscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\projectmanagement.domain\\entities\\rentalapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|solutionrelative:projectmanagement.domain\\entities\\rentalapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\lising\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|solutionrelative:lising\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\projectmanagement.domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|solutionrelative:projectmanagement.domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|c:\\users\\mrlas\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u043A\u0443\u0440\u0441\\3.2\\\u0441\u0430\u0434\u044B\u043A\u043E\u0432\\aspnetcore\\lising\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|solutionrelative:lising\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\projectmanagement.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|solutionrelative:projectmanagement.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\lising\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|solutionrelative:lising\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5EC659-3279-4CDA-AD31-16CE2BC88520}|ProjectManagement.Infrastructure\\ProjectManagement.Infrastructure.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\projectmanagement.infrastructure\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A5EC659-3279-4CDA-AD31-16CE2BC88520}|ProjectManagement.Infrastructure\\ProjectManagement.Infrastructure.csproj|solutionrelative:projectmanagement.infrastructure\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\lising\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|solutionrelative:lising\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\projectmanagement.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|solutionrelative:projectmanagement.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\lising\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|solutionrelative:lising\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\lising\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30C3BA1C-CC55-43D2-B907-7FB26204C7E0}|Lising\\Lising.csproj|solutionrelative:lising\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\projectmanagement.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|solutionrelative:projectmanagement.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\projectmanagement.domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|solutionrelative:projectmanagement.domain\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\projectmanagement.domain\\entities\\rentalapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|solutionrelative:projectmanagement.domain\\entities\\rentalapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\projectmanagement.domain\\entities\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{201FE734-33F5-4A4B-A702-D4DDC3ED225C}|ProjectManagement.Domain\\ProjectManagement.Domain.csproj|solutionrelative:projectmanagement.domain\\entities\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,102 +66,167 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CarsController.cs",
-              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Controllers\\CarsController.cs",
-              "RelativeDocumentMoniker": "Lising\\Controllers\\CarsController.cs",
-              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Controllers\\CarsController.cs",
-              "RelativeToolTip": "Lising\\Controllers\\CarsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 5,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Lising\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Lising\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAYwFEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T21:45:46.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Program.cs",
-              "RelativeDocumentMoniker": "Lising\\Program.cs",
-              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Program.cs",
-              "RelativeToolTip": "Lising\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T21:45:12.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Infrastructure\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "ProjectManagement.Infrastructure\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Infrastructure\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "ProjectManagement.Infrastructure\\Data\\AppDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T21:19:03.295Z",
+              "WhenOpened": "2025-03-18T07:45:31.584Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\appsettings.json",
-              "RelativeDocumentMoniker": "Lising\\appsettings.json",
-              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\appsettings.json",
-              "RelativeToolTip": "Lising\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-04T21:10:02.459Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Domain\\Entities\\User.cs",
               "RelativeDocumentMoniker": "ProjectManagement.Domain\\Entities\\User.cs",
               "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Domain\\Entities\\User.cs",
               "RelativeToolTip": "ProjectManagement.Domain\\Entities\\User.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwCAAAABDAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwA4AAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-04T21:06:54.604Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Models\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "Lising\\Models\\RegisterModel.cs",
+              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Models\\RegisterModel.cs",
+              "RelativeToolTip": "Lising\\Models\\RegisterModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T07:51:08.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "Lising\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Models\\LoginModel.cs",
+              "RelativeToolTip": "Lising\\Models\\LoginModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T07:50:45.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Infrastructure\\Data\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "ProjectManagement.Infrastructure\\Data\\DbInitializer.cs",
+              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Infrastructure\\Data\\DbInitializer.cs",
+              "RelativeToolTip": "ProjectManagement.Infrastructure\\Data\\DbInitializer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T08:13:12.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Lising\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Lising\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-13T07:44:10.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarsController.cs",
+              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Controllers\\CarsController.cs",
+              "RelativeDocumentMoniker": "Lising\\Controllers\\CarsController.cs",
+              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Controllers\\CarsController.cs",
+              "RelativeToolTip": "Lising\\Controllers\\CarsController.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAYwDAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T21:45:46.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Program.cs",
+              "RelativeDocumentMoniker": "Lising\\Program.cs",
+              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\Program.cs",
+              "RelativeToolTip": "Lising\\Program.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAAAGwAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T21:45:12.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Infrastructure\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "ProjectManagement.Infrastructure\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Infrastructure\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "ProjectManagement.Infrastructure\\Data\\AppDbContext.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAzwCsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T21:19:03.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\appsettings.json",
+              "RelativeDocumentMoniker": "Lising\\appsettings.json",
+              "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\Lising\\appsettings.json",
+              "RelativeToolTip": "Lising\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-04T21:10:02.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Domain\\Entities\\Order.cs",
               "RelativeDocumentMoniker": "ProjectManagement.Domain\\Entities\\Order.cs",
               "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Domain\\Entities\\Order.cs",
               "RelativeToolTip": "ProjectManagement.Domain\\Entities\\Order.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAA8AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-04T07:46:47.266Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Review.cs",
               "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Domain\\Entities\\Review.cs",
               "RelativeDocumentMoniker": "ProjectManagement.Domain\\Entities\\Review.cs",
               "ToolTip": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Domain\\Entities\\Review.cs",
               "RelativeToolTip": "ProjectManagement.Domain\\Entities\\Review.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAIwB0AAAA8AAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABMAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-04T07:46:09.504Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "RentalApplication.cs",
               "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Domain\\Entities\\RentalApplication.cs",
               "RelativeDocumentMoniker": "ProjectManagement.Domain\\Entities\\RentalApplication.cs",
@@ -154,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "Car.cs",
               "DocumentMoniker": "C:\\Users\\mrlas\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\3\u041A\u0423\u0420\u0421\\3.2\\\u0421\u0430\u0434\u044B\u043A\u043E\u0432\\ASPNETCore\\ProjectManagement.Domain\\Entities\\Car.cs",
               "RelativeDocumentMoniker": "ProjectManagement.Domain\\Entities\\Car.cs",

@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using ProjectManagement.Application.Services;
 using ProjectManagement.Domain;
 using ProjectManagement.Domain.Entities;
@@ -8,31 +11,71 @@ using ProjectManagement.Infrastructure;
 using ProjectManagement.Infrastructure.Data;
 using ProjectManagement.Infrastructure.Repositories;
 using System;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddDbContext<AppDbContext>(options =>options.UseInMemoryDatabase(builder.Configuration.GetConnectionString("DefaultConnection")));
+//builder.Services.AddDbContext<AppDbContext>(options =>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+    b => b.MigrationsAssembly("Lising"))); // Явное указание сборки
 builder.Services.AddControllers();
+
+
+
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+    //options.User.AllowedUserNameCharacters =
+    //    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./_-";
+    //options.User.RequireUniqueEmail = true;
+
+    //// Отключаем обязательные спецсимволы
+    //options.Password.RequireNonAlphanumeric = false;
+    //// Отключаем обязательные строчные буквы
+    //options.Password.RequireLowercase = false;
+    //// Можно также настроить другие параметры:
+    //options.Password.RequiredLength = 6; // Минимальная длина
+    //options.Password.RequireUppercase = false; // Отключить заглавные
+    //options.Password.RequireDigit = false; // Отключить цифры
+})
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        //IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["SigningKey SigningKey SigningKey SigningKey SigningKey SigningKey SigningKey SigningKey "]))
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("admin"));
+});
+
 
 builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<CarService>();
 
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-//// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseSwagger();
-//    app.UseSwaggerUI();
-//}
-
-// Настройка middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -40,15 +83,30 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Project Management API V1");
-        c.RoutePrefix = "swagger"; // Установите правильный префикс
+        c.RoutePrefix = "swagger"; 
     });
 }
 
 
 app.UseHttpsRedirection();
 
+//app.UseAuthorization();
+
+//app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<AppDbContext>();
+    var userManager = services.GetRequiredService<UserManager<User>>();
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+    await DbInitializer.Initialize(context, userManager, roleManager);
+}
+
+app.UseAuthentication(); 
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();

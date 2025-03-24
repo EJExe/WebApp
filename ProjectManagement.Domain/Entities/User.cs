@@ -1,4 +1,5 @@
 ﻿// Models/User.cs
+using Microsoft.AspNetCore.Identity;
 using ProjectManagement.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,24 +7,21 @@ using System.Text.Json.Serialization;
 
 namespace ProjectManagement.Domain.Entities
 {
-    public class User
+    public class User : IdentityUser
     {
-        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UserId { get; set; }
+        //public string UserId { get; set; }
 
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public override string UserName { get; set; }
 
         [Required]
         [EmailAddress]
         [MaxLength(100)]
         public string Email { get; set; }
 
-        [Required]
-        [MaxLength(100)]
-        public string PasswordHash { get; set; } // Хеш пароля
+        
 
         [Required]
         [MaxLength(20)]
@@ -33,7 +31,7 @@ namespace ProjectManagement.Domain.Entities
         //public List<RentalApplication> Applications { get; set; }
 
         // Навигационные свойства
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
         public virtual ICollection<Review> Reviews { get; set; }
     }
 }

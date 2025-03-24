@@ -24,7 +24,7 @@ namespace ProjectManagement.Domain.Entities
         // Внешние ключи
         public int ApplicationId { get; set; }
         public int OrderId { get; set; } // Связь с заказом
-        public int UserId { get; set; } // Связь с пользователем
+        public string UserId { get; set; } // Связь с пользователем
 
         //[JsonIgnore]
         //public RentalApplication Application { get; set; }
@@ -35,5 +35,7 @@ namespace ProjectManagement.Domain.Entities
 
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
+
+
     }
 }

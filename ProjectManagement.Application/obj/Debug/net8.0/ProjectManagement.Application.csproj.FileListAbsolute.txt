@@ -15,3 +15,5 @@ C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASP
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\refint\ProjectManagement.Application.dll
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ProjectManagement.Application.pdb
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ref\ProjectManagement.Application.dll
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\bin\Debug\net8.0\ProjectManagement.Application.runtimeconfig.json
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Application\obj\Debug\net8.0\ProjectManagement.Application.genruntimeconfig.cache

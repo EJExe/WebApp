@@ -1,4 +1,5 @@
 ﻿// Controllers/CarsController.cs
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjectManagement.Application.Services;
@@ -39,6 +40,7 @@ namespace ProjectManagement.Api.Controllers
         }
 
         // POST: api/cars
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public ActionResult<Car> AddCar([FromBody] Car car)
         {

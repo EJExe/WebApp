@@ -8,7 +8,7 @@ namespace ProjectManagement.Domain.Entities
     public class Order
     {
         public int OrderId { get; set; }
-        public int UserId { get; set; } // ID пользователя
+        public string UserId { get; set; } // ID пользователя
         public int CarId { get; set; } // ID автомобиля
         public DateTime StartDate { get; set; } // Дата начала аренды
         public DateTime EndDate { get; set; } // Дата окончания

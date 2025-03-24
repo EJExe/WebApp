@@ -13,3 +13,5 @@ C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASP
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\refint\ProjectManagement.Infrastructure.dll
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.pdb
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ref\ProjectManagement.Infrastructure.dll
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\bin\Debug\net8.0\ProjectManagement.Infrastructure.runtimeconfig.json
+C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.genruntimeconfig.cache
