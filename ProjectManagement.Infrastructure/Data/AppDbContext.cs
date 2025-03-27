@@ -8,6 +8,8 @@ namespace ProjectManagement.Infrastructure.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<AppTask> Tasks { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Review> Reviews { get; set; }

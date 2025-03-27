@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lising")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bea6755f682c5cb3bf00c582d4a1a157aa4c71ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e362d740348ff09d601f71e53f17b008b75338d5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lising")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lising")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

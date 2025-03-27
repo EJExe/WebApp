@@ -13,8 +13,8 @@ namespace ProjectManagement.Infrastructure.Data
     {
         public static async Task Initialize(AppDbContext context, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
-            //context.Database.EnsureCreated();
-            await context.Database.MigrateAsync();
+            context.Database.EnsureCreated();
+            //await context.Database.MigrateAsync();
 
             // Проверяем наличие ролей
             if (!roleManager.Roles.Any())
