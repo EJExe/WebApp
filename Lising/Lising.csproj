@@ -27,8 +27,4 @@
     <ProjectReference Include="..\ProjectManagement.Tests\ProjectManagement.Tests.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>

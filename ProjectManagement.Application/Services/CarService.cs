@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ProjectManagement.Application.DTOs;
 using ProjectManagement.Domain.Entities;
 using ProjectManagement.Domain.Interfaces;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ProjectManagement.Application.Services
 {
@@ -17,29 +15,64 @@ namespace ProjectManagement.Application.Services
             _carRepository = carRepository;
         }
 
-        public IEnumerable<Car> GetAllCars()
+        public async Task<IEnumerable<CarDto>> GetCarsAsync()
         {
-            return _carRepository.GetAll();
+            var cars = await _carRepository.GetCarsAsync();
+            return cars.Select(c => new CarDto
+            {
+                Id = c.Id,
+                Brand = c.Brand,
+                Model = c.Model,
+                PricePerDay = c.PricePerDay,
+                Type = c.Type,
+                ImageUrl = c.ImageUrl
+            });
         }
 
-        public Car GetCarById(int id)
+        public async Task<CarDto> GetCarByIdAsync(int id)
         {
-            return _carRepository.GetById(id);
+            var car = await _carRepository.GetCarByIdAsync(id);
+            return new CarDto
+            {
+                Id = car.Id,
+                Brand = car.Brand,
+                Model = car.Model,
+                PricePerDay = car.PricePerDay,
+                Type = car.Type,
+                ImageUrl = car.ImageUrl
+            };
         }
 
-        public void AddCar(Car car)
+        public async Task AddCarAsync(CreateCarDto carDto)
         {
-            _carRepository.Add(car);
+            var car = new Car
+            {
+                Brand = carDto.Brand,
+                Model = carDto.Model,
+                PricePerDay = carDto.PricePerDay,
+                Type = carDto.Type,
+                ImageUrl = carDto.ImageUrl
+            };
+            await _carRepository.AddCarAsync(car);
         }
 
-        public void UpdateCar(Car car)
+        public async Task UpdateCarAsync(CreateCarDto carDto)
         {
-            _carRepository.Update(car);
+            var car = await _carRepository.GetCarByIdAsync(carDto.Id);
+            if (car != null)
+            {
+                car.Brand = carDto.Brand;
+                car.Model = carDto.Model;
+                car.PricePerDay = carDto.PricePerDay;
+                car.Type = carDto.Type;
+                car.ImageUrl = carDto.ImageUrl;
+                await _carRepository.UpdateCarAsync(car);
+            }
         }
 
-        public void DeleteCar(int id)
+        public async Task DeleteCarAsync(int id)
         {
-            _carRepository.Delete(id);
+            await _carRepository.DeleteCarAsync(id);
         }
     }
 }

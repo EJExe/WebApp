@@ -1,16 +1,9 @@
-﻿using ProjectManagement.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ProjectManagement.Domain.Entities;
 using ProjectManagement.Domain.Interfaces;
 using ProjectManagement.Infrastructure.Data;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace ProjectManagement.Infrastructure.Repositories
 {
@@ -23,35 +16,35 @@ namespace ProjectManagement.Infrastructure.Repositories
             _context = context;
         }
 
-        public IEnumerable<Car> GetAll()
+        public async Task<Car> GetCarByIdAsync(int id)
         {
-            return _context.Cars.ToList();
+            return await _context.Cars.FindAsync(id);
         }
 
-        public Car GetById(int id)
+        public async Task<IEnumerable<Car>> GetCarsAsync()
         {
-            return _context.Cars.Find(id);
+            return await _context.Cars.ToListAsync();
         }
 
-        public void Add(Car car)
+        public async Task AddCarAsync(Car car)
         {
-            _context.Cars.Add(car);
-            _context.SaveChanges();
+            await _context.Cars.AddAsync(car);
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(Car car)
+        public async Task UpdateCarAsync(Car car)
         {
             _context.Entry(car).State = EntityState.Modified;
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task DeleteCarAsync(int id)
         {
-            var car = _context.Cars.Find(id);
+            var car = await _context.Cars.FindAsync(id);
             if (car != null)
             {
                 _context.Cars.Remove(car);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
     }

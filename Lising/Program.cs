@@ -18,26 +18,12 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddDbContext<AppDbContext>(options =>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-    b => b.MigrationsAssembly("Lising"))); // Явное указание сборки
+    b => b.MigrationsAssembly("ProjectManagement.Infrastructure"))); // Явное указание сборки
 builder.Services.AddControllers();
 
 
 
-builder.Services.AddIdentity<User, IdentityRole>(options =>
-{
-    //options.User.AllowedUserNameCharacters =
-    //    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./_-";
-    //options.User.RequireUniqueEmail = true;
-
-    //// Отключаем обязательные спецсимволы
-    //options.Password.RequireNonAlphanumeric = false;
-    //// Отключаем обязательные строчные буквы
-    //options.Password.RequireLowercase = false;
-    //// Можно также настроить другие параметры:
-    //options.Password.RequiredLength = 6; // Минимальная длина
-    //options.Password.RequireUppercase = false; // Отключить заглавные
-    //options.Password.RequireDigit = false; // Отключить цифры
-})
+builder.Services.AddIdentity<User, IdentityRole>(options => {})
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
@@ -70,9 +56,13 @@ builder.Services.AddAuthorization(options =>
 
 builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<CarService>();
-builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
-builder.Services.AddScoped<ITaskRepository, TaskRepository>();
-builder.Services.AddScoped<ProjectService>();
+//builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+//builder.Services.AddScoped<ProjectService>();
+builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<CarService>();
+// Регистрация репозиториев и сервисов
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<OrderService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

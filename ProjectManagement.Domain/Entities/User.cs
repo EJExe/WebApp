@@ -25,7 +25,7 @@ namespace ProjectManagement.Domain.Entities
 
         [Required]
         [MaxLength(20)]
-        public string Role { get; set; } = "Client"; // Роль: Client или Manager
+        public string Role { get; set; } = "Client"; // Роль: Client или admin
 
         //[JsonIgnore]
         //public List<RentalApplication> Applications { get; set; }

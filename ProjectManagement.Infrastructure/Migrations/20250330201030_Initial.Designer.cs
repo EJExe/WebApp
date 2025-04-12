@@ -9,11 +9,11 @@ using ProjectManagement.Infrastructure.Data;
 
 #nullable disable
 
-namespace Lising.Migrations
+namespace ProjectManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250326220556_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250330201030_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -158,38 +158,6 @@ namespace Lising.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ProjectManagement.Domain.Entities.AppTask", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProjectId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProjectId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Tasks");
-                });
-
             modelBuilder.Entity("ProjectManagement.Domain.Entities.Car", b =>
                 {
                     b.Property<int>("Id")
@@ -255,32 +223,6 @@ namespace Lising.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("ProjectManagement.Domain.Entities.Project", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
-                    b.Property<DateTime>("DueDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("ProjectManagement.Domain.Entities.Review", b =>
@@ -445,25 +387,6 @@ namespace Lising.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ProjectManagement.Domain.Entities.AppTask", b =>
-                {
-                    b.HasOne("ProjectManagement.Domain.Entities.Project", "Project")
-                        .WithMany("Tasks")
-                        .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProjectManagement.Domain.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Project");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("ProjectManagement.Domain.Entities.Order", b =>
                 {
                     b.HasOne("ProjectManagement.Domain.Entities.Car", "Car")
@@ -500,11 +423,6 @@ namespace Lising.Migrations
                     b.Navigation("Order");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("ProjectManagement.Domain.Entities.Project", b =>
-                {
-                    b.Navigation("Tasks");
                 });
 
             modelBuilder.Entity("ProjectManagement.Domain.Entities.User", b =>
