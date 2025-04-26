@@ -13,5 +13,5 @@ public class RegisterModel
 
     //public string Role { get; set; }
     [Required]
-    public string Role { get; set; } = "Client";
+    public string Role { get; set; } 
 }

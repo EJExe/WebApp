@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tEOpXzsceM/CYfKY76+GH/DItJog6vFIjVEvsv3QXv/JJlQSt0sbzh3gzsNmLVadbRLDPv4kghFPNEO2+gDjkA==",
+  "dgSpecHash": "Y+iJzbFA11QLsfmDN6bRwaliLRWs1eBHzw2PsuIBEU9a3U1uJ3SihSQ5bAN2uVN1DRBAmpXRiG92AA6y5POgtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mrlas\\OneDrive\\Рабочий стол\\3КУРС\\3.2\\Садыков\\Project\\ASPNETCore\\ProjectManagement.Domain\\ProjectManagement.Domain.csproj",
+  "projectFilePath": "D:\\UNIVERS\\3КУРС\\3.2\\Садыков\\ASPNETCore\\ProjectManagement.Domain\\ProjectManagement.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mrlas\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\mrlas\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

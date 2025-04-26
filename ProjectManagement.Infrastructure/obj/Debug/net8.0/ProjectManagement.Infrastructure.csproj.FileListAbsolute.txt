@@ -32,3 +32,20 @@ C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Pro
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Project\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.pdb
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Project\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.genruntimeconfig.cache
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Project\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ref\ProjectManagement.Infrastructure.dll
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\bin\Debug\net8.0\ProjectManagement.Infrastructure.deps.json
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\bin\Debug\net8.0\ProjectManagement.Infrastructure.runtimeconfig.json
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\bin\Debug\net8.0\ProjectManagement.Infrastructure.dll
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\bin\Debug\net8.0\ProjectManagement.Infrastructure.pdb
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\bin\Debug\net8.0\ProjectManagement.Domain.dll
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\bin\Debug\net8.0\ProjectManagement.Domain.pdb
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.csproj.AssemblyReference.cache
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.AssemblyInfoInputs.cache
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.AssemblyInfo.cs
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.csproj.CoreCompileInputs.cache
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectM.60AD468C.Up2Date
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.dll
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\refint\ProjectManagement.Infrastructure.dll
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.pdb
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ProjectManagement.Infrastructure.genruntimeconfig.cache
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Infrastructure\obj\Debug\net8.0\ref\ProjectManagement.Infrastructure.dll

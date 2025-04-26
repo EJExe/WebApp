@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UaxS8WwJnetEMNnVOwOfH6NLhQcPqPqIFCMx4XRMvt81QIfxxMpHddkPwD4N6GPjLqilLj0S28soDv3FODcsnQ==",
+  "dgSpecHash": "aOsgFgkQ6xx0/DNMNclgW4Q5o/zWBZb3oz8oVqvAH5fbSZzKUjXg9+oZFih4c+xM616VLrOl+ZfahHKk0yK8AA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mrlas\\OneDrive\\Рабочий стол\\3КУРС\\3.2\\Садыков\\Project\\ASPNETCore\\Lising\\Lising.csproj",
+  "projectFilePath": "D:\\UNIVERS\\3КУРС\\3.2\\Садыков\\ASPNETCore\\Lising\\Lising.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mrlas\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\mrlas\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

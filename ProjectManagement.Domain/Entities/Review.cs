@@ -22,7 +22,7 @@ namespace ProjectManagement.Domain.Entities
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Дата создания
 
         // Внешние ключи
-        public int ApplicationId { get; set; }
+        //public int ApplicationId { get; set; }
         public int OrderId { get; set; } // Связь с заказом
         public string UserId { get; set; } // Связь с пользователем
 

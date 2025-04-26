@@ -6507,11 +6507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mrlas\\OneDrive\\Рабочий стол\\3КУРС\\3.2\\Садыков\\Project\\ASPNETCore\\ProjectManagement.Tests\\ProjectManagement.Tests.csproj",
+      "projectUniqueName": "D:\\UNIVERS\\3КУРС\\3.2\\Садыков\\ASPNETCore\\ProjectManagement.Tests\\ProjectManagement.Tests.csproj",
       "projectName": "ProjectManagement.Tests",
-      "projectPath": "C:\\Users\\mrlas\\OneDrive\\Рабочий стол\\3КУРС\\3.2\\Садыков\\Project\\ASPNETCore\\ProjectManagement.Tests\\ProjectManagement.Tests.csproj",
+      "projectPath": "D:\\UNIVERS\\3КУРС\\3.2\\Садыков\\ASPNETCore\\ProjectManagement.Tests\\ProjectManagement.Tests.csproj",
       "packagesPath": "C:\\Users\\mrlas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mrlas\\OneDrive\\Рабочий стол\\3КУРС\\3.2\\Садыков\\Project\\ASPNETCore\\ProjectManagement.Tests\\obj\\",
+      "outputPath": "D:\\UNIVERS\\3КУРС\\3.2\\Садыков\\ASPNETCore\\ProjectManagement.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

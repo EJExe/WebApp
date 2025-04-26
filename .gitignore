@@ -1,0 +1,26 @@
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+*.userprefs
+
+# Ignore build artifacts
+bin/
+obj/
+
+# Ignore NuGet packages
+packages/
+
+# Ignore log files
+*.log
+
+# Ignore user-specific files
+*.csproj.user
+
+# Ignore environment-specific files
+appsettings.Development.json
+secrets.json
+
+# Ignore other temporary files
+Thumbs.db
+*.tmp

@@ -7,6 +7,7 @@ using System.Text;
 using ProjectManagement.Domain.Entities;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ProjectManagement.Api.Controllers
 {
@@ -16,96 +17,99 @@ namespace ProjectManagement.Api.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly IConfiguration _configuration;
+        private readonly SignInManager<User> _signInManager;
         private readonly ILogger<AccountController> _logger; // Добавьте это поле
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<User> userManager, IConfiguration configuration, ILogger<AccountController> logger)
+        public AccountController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, SignInManager<User> signInManager, IConfiguration configuration, ILogger<AccountController> logger)
         {
             _userManager = userManager;
             _configuration = configuration;
+            _roleManager = roleManager;
+            _signInManager = signInManager;
             _logger = logger;
         }
 
+
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterModel model)
+        public async Task<IActionResult> Register(RegisterModel model)
         {
-            if (model == null)
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            //var user = new User { UserName = model.UserName, Email = model.Email };
+            var user = new User { UserName = model.UserName, Email = model.Email, Role = model.Role };
+            var result = await _userManager.CreateAsync(user, model.Password);
+            if (result.Succeeded)
             {
-                _logger.LogError("Request body is null");
-                return BadRequest("Request body is empty");
+                await _userManager.AddToRoleAsync(user, model.Role);
+                //await _userManager.AddToRoleAsync(user, "Client");
+                return Ok(new { Message = "User registered successfully" });
             }
-
-            _logger.LogInformation($"Received data: {JsonSerializer.Serialize(model)}");
-
-            if (string.IsNullOrEmpty(model.UserName) || string.IsNullOrEmpty(model.Email))
-            {
-                _logger.LogError("Username or email is empty");
-                return BadRequest("Username and email are required");
-            }
-
-            if (!ModelState.IsValid)
-            {
-                _logger.LogError("Model validation failed: {@ModelState}", ModelState);
-                return BadRequest(ModelState);
-            }
-            try
-            {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                var user = new User
-                {
-                    UserName = model.UserName,
-                    Email = model.Email,
-                    Role = model.Role
-                };
-
-                var result = await _userManager.CreateAsync(user, model.Password);
-
-                if (result.Succeeded)
-                {
-                    return Ok(new { Message = "User registered successfully" });
-                }
-
-                return BadRequest(result.Errors);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Registration failed");
-                return StatusCode(500, "Internal server error");
-            }
+            return BadRequest(result.Errors);
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginModel model)
+        public async Task<IActionResult> Login(LoginModel model)
         {
-            var user = await _userManager.FindByNameAsync(model.UserName);
-
-            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, isPersistent: false, lockoutOnFailure: false);
+            if (result.Succeeded)
             {
-                var authClaims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                };
-
-                var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-
-                var token = new JwtSecurityToken(
-                    issuer: _configuration["Jwt:Issuer"],
-                    audience: _configuration["Jwt:Audience"],
-                    expires: DateTime.Now.AddDays(7),
-                    claims: authClaims,
-                    signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
-                );
-
-                return Ok(new
-                {
-                    token = new JwtSecurityTokenHandler().WriteToken(token),
-                    expiration = token.ValidTo
-                });
+                var user = await _userManager.FindByNameAsync(model.UserName);
+                var token = GenerateJwtToken(user);
+                IList<string> roles = await _userManager.GetRolesAsync(user);
+                string userRole = roles.FirstOrDefault();
+                return Ok(new { Token = token, userName = user.UserName, userRole });
             }
-
             return Unauthorized();
+        }
+
+        [Authorize]
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return Ok(new { Message = "User logged out successfully" });
+        }
+
+        [HttpGet("validate")]
+        public async Task<IActionResult> ValidateToken()
+        {
+            User usr = await _userManager.GetUserAsync(HttpContext.User);
+            if (usr == null)
+            {
+                return Unauthorized(new { message = "Вы Гость. Пожалуйста, выполните вход" });
+            }
+            IList<string> roles = await _userManager.GetRolesAsync(usr);
+            string userRole = roles.FirstOrDefault();
+            return Ok(new { message = "Сессия активна", userName = usr.UserName, userRole });
+
+        }
+
+        private string GenerateJwtToken(User user)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+            };
+
+            var roles = _userManager.GetRolesAsync(user).Result;
+            claims.AddRange(roles.Select(role => new Claim(ClaimsIdentity.DefaultRoleClaimType, role)));
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expires = DateTime.Now.AddDays(Convert.ToDouble(_configuration["Jwt:ExpireDays"]));
+
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
+                claims: claims,
+                expires: expires,
+                signingCredentials: creds
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }
