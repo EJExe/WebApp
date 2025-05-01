@@ -1,26 +1,42 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Lising.Controllers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProjectManagement.Application.DTOs;
 using ProjectManagement.Application.Services;
+using ProjectManagement.Domain.Entities;
 
 namespace ProjectManagement.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Cars")]
     [ApiController]
     public class CarsController : ControllerBase
     {
         private readonly CarService _carService;
+        private readonly ILogger<BodyTypesController> _logger;
 
-        public CarsController(CarService carService)
+        public CarsController(CarService carService,
+            ILogger<BodyTypesController> logger)
         {
             _carService = carService;
+            _logger = logger;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CarDto>>> GetCars()
+        public async Task<ActionResult<CarSearchResultDto>> GetCars(
+            [FromQuery] int pageNumber = 1,
+            [FromQuery] int pageSize = 10)
         {
-            var cars = await _carService.GetCarsAsync();
-            return Ok(cars);
+            try
+            {
+                var result = await _carService.GetCarsWithPaginationAsync(pageNumber, pageSize);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting cars");
+                return StatusCode(500, "Internal server error");
+            }
         }
 
         [HttpGet("{id}")]
@@ -33,21 +49,50 @@ namespace ProjectManagement.Api.Controllers
 
         
         [HttpPost]
-        public async Task<ActionResult<CarDto>> CreateCar(CreateCarDto carDto)
+        public async Task<ActionResult<CarDto>> CreateCar(CreateCarDto CreatedcarDto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            await _carService.AddCarAsync(carDto);
-            return CreatedAtAction(nameof(GetCar), new { id = carDto.Id }, carDto);
+            await _carService.AddCarAsync(CreatedcarDto);
+            return CreatedAtAction(nameof(GetCar), new { id = CreatedcarDto.Id }, CreatedcarDto);
         }
 
-       
+
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCar(int id, CreateCarDto carDto)
+        public async Task<IActionResult> UpdateCar(int id, UpdateCarDto dto)
         {
-            if (id != carDto.Id) return BadRequest();
-            await _carService.UpdateCarAsync(carDto);
-            return CreatedAtAction(nameof(GetCar), new { id = carDto.Id }, carDto);
+            if (id != dto.Id)
+                return BadRequest(new { Message = "ID mismatch between URL and body" });
+
+            try
+            {
+                await _carService.UpdateCarAsync(id, dto);
+                return NoContent();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { ex.Message });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { ex.Message });
+            }
+            catch (ApplicationException ex)
+            {
+                _logger.LogError(ex, "Car update error");
+                return StatusCode(500, new
+                {
+                    Message = "Operation failed",
+                    Details = ex.InnerException?.Message
+                });
+            }
         }
+
+        //public async Task<IActionResult> UpdateCar(int id, UpdateCarDto dto)
+        //{
+        //    if (id != dto.Id) return BadRequest();
+        //    await _carService.UpdateCarAsync(id, dto);
+        //    return CreatedAtAction(nameof(GetCar), new { id = dto.Id }, dto);
+        //}
 
 
         [Authorize(Roles = "admin")]

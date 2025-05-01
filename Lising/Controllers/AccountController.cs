@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ProjectManagement.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Account")]
     [ApiController]
     public class AccountController : ControllerBase
     {

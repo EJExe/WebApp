@@ -570,15 +570,22 @@ C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Pro
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Project\ASPNETCore\Lising\obj\Debug\net8.0\Lising.pdb
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Project\ASPNETCore\Lising\obj\Debug\net8.0\Lising.genruntimeconfig.cache
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Project\ASPNETCore\Lising\obj\Debug\net8.0\ref\Lising.dll
-D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\testhost.exe
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.csproj.AssemblyReference.cache
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.GeneratedMSBuildEditorConfig.editorconfig
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.AssemblyInfoInputs.cache
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.AssemblyInfo.cs
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.csproj.CoreCompileInputs.cache
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.MvcApplicationPartsAssemblyInfo.cache
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.sourcelink.json
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\testhost.dll
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\ProjectManagement.Tests.deps.json
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\ProjectManagement.Tests.runtimeconfig.json
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\testhost.exe
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\Microsoft.TestPlatform.AdapterUtilities.dll
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\appsettings.Development.json
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\appsettings.json
-D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\ProjectManagement.Tests.deps.json
-D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\ProjectManagement.Tests.runtimeconfig.json
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\Lising.exe
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\Lising.deps.json
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\Lising.runtimeconfig.json
@@ -835,13 +842,6 @@ D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\Proje
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\ProjectManagement.Domain.pdb
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\ProjectManagement.Infrastructure.pdb
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\bin\Debug\net8.0\ProjectManagement.Tests.pdb
-D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.csproj.AssemblyReference.cache
-D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.GeneratedMSBuildEditorConfig.editorconfig
-D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.AssemblyInfoInputs.cache
-D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.AssemblyInfo.cs
-D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.csproj.CoreCompileInputs.cache
-D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.MvcApplicationPartsAssemblyInfo.cs
-D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.MvcApplicationPartsAssemblyInfo.cache
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\staticwebassets.build.json
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\staticwebassets.development.json
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\staticwebassets\msbuild.Lising.Microsoft.AspNetCore.StaticWebAssets.props

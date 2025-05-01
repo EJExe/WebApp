@@ -6,20 +6,23 @@ namespace ProjectManagement.Application.DTOs
     public class UpdateCarDto
     {
         public int Id { get; set; }
-
-        [Required(ErrorMessage = "Brand is required")]
-        public string Brand { get; set; }
-
-        [Required(ErrorMessage = "Model is required")]
+        public int BrandId { get; set; }
+        public int FuelTypeId { get; set; }
+        public int DriveTypeId { get; set; }
+        public int CategoryId { get; set; }
+        public int BodyTypeId { get; set; }
+        public List<int> FeatureIds { get; set; } = new();
         public string Model { get; set; }
-
-        [Range(0.1, double.MaxValue, ErrorMessage = "Price must be positive")]
+        public int Year { get; set; }
+        public int Mileage { get; set; }
+        public string Color { get; set; }
+        public int Seats { get; set; }
         public decimal PricePerDay { get; set; }
 
-        [Required(ErrorMessage = "Type is required")]
-        public string Type { get; set; }
+        public double Latitude { get; set; }  // Широта
 
-        [Url(ErrorMessage = "Invalid URL format")]
+        public double Longitude { get; set; } // Долгота
+
         public string ImageUrl { get; set; }
     }
 }

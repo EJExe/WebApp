@@ -520,8 +520,8 @@ C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Pro
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Project\ASPNETCore\ProjectManagement.Tests\obj\Debug\net8.0\ProjectManagement.Tests.pdb
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Project\ASPNETCore\ProjectManagement.Tests\obj\Debug\net8.0\ProjectManagement.Tests.genruntimeconfig.cache
 C:\Users\mrlas\OneDrive\Рабочий стол\3КУРС\3.2\Садыков\Project\ASPNETCore\ProjectManagement.Tests\obj\Debug\net8.0\ref\ProjectManagement.Tests.dll
-D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\bin\Debug\net8.0\testhost.exe
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\bin\Debug\net8.0\testhost.dll
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\bin\Debug\net8.0\testhost.exe
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\bin\Debug\net8.0\Microsoft.TestPlatform.AdapterUtilities.dll
@@ -775,6 +775,7 @@ D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\obj\D
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\obj\Debug\net8.0\ProjectManagement.Tests.AssemblyInfoInputs.cache
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\obj\Debug\net8.0\ProjectManagement.Tests.AssemblyInfo.cs
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\obj\Debug\net8.0\ProjectManagement.Tests.csproj.CoreCompileInputs.cache
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\obj\Debug\net8.0\ProjectManagement.Tests.sourcelink.json
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\obj\Debug\net8.0\ProjectM.3A0554AB.Up2Date
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\obj\Debug\net8.0\ProjectManagement.Tests.dll
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Tests\obj\Debug\net8.0\refint\ProjectManagement.Tests.dll

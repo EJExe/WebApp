@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectManagement.Domain.Entities
 {
-    public class DriveType
+    public class CarDriveType
     {
         public int Id { get; set; }
 

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,34 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     b => b.MigrationsAssembly("ProjectManagement.Infrastructure"))); // Явное указание сборки
 builder.Services.AddControllers();
 
+// Регистрация репозиториев
+builder.Services.AddScoped<IBodyTypeRepository, BodyTypeRepository>();
+builder.Services.AddScoped<IBrandRepository, BrandRepository>();
+builder.Services.AddScoped<ICarCategoryRepository, CarCategoryRepository>();
+builder.Services.AddScoped<ICarDriveTypeRepository, CarDriveTypeRepository>();
+builder.Services.AddScoped<ICarFeatureRepository, CarFeatureRepository>();
+builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<IFuelTypeRepository, FuelTypeRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+// Регистрация сервисов
+builder.Services.AddScoped<BodyTypeService>();
+builder.Services.AddScoped<BrandService>();
+builder.Services.AddScoped<CarCategoryService>();
+builder.Services.AddScoped<CarDriveTypeService>();
+builder.Services.AddScoped<CarFeatureService>();
+builder.Services.AddScoped<CarService>();
+builder.Services.AddScoped<FuelTypeService>();
+builder.Services.AddScoped<OrderService>();
+builder.Services.AddScoped<PaymentService>();
+builder.Services.AddScoped<ReviewService>();
+builder.Services.AddScoped<UserService>();
+
+builder.Services.AddControllers();
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddIdentity<User, IdentityRole>(options => {})
     .AddEntityFrameworkStores<AppDbContext>()
@@ -31,20 +59,16 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins("http://localhost:3000", "https://localhost:7154")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
     });
 });
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(options =>
-{
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
@@ -62,21 +86,24 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("admin"));
+    //options.DefaultPolicy = new AuthorizationPolicyBuilder()
+    //    .RequireAuthenticatedUser() // Требует аутентификации для всех эндпоинтов
+    //    .Build();
 });
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.DefaultPolicy = new AuthorizationPolicyBuilder()
+//        .RequireAuthenticatedUser()
+//        .Build();
 
+//    options.AddPolicy("AdminOnly", policy => policy
+//        .RequireAuthenticatedUser()
+//        .RequireRole("admin"));
+//});
 
-builder.Services.AddScoped<ICarRepository, CarRepository>();
-builder.Services.AddScoped<CarService>();
-//builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
-//builder.Services.AddScoped<ProjectService>();
-builder.Services.AddScoped<ICarRepository, CarRepository>();
-builder.Services.AddScoped<CarService>();
-// Регистрация репозиториев и сервисов
-builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-builder.Services.AddScoped<OrderService>();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 
@@ -98,6 +125,13 @@ app.UseHttpsRedirection();
 
 //app.MapControllers();
 
+app.UseCors("AllowReactApp");
+
+app.UseAuthentication(); 
+app.UseAuthorization();
+
+app.MapControllers();
+
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -106,13 +140,5 @@ using (var scope = app.Services.CreateScope())
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
     await DbInitializer.Initialize(context, userManager, roleManager);
 }
-
-app.UseCors("AllowReactApp");
-
-app.UseAuthentication(); 
-app.UseAuthorization();
-
-app.MapControllers();
-
 
 app.Run();

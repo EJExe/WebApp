@@ -35,6 +35,7 @@ D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\Debug\net8.0\ProjectManagement.Domain.AssemblyInfoInputs.cache
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\Debug\net8.0\ProjectManagement.Domain.AssemblyInfo.cs
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\Debug\net8.0\ProjectManagement.Domain.csproj.CoreCompileInputs.cache
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\Debug\net8.0\ProjectManagement.Domain.sourcelink.json
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\Debug\net8.0\ProjectManagement.Domain.dll
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\Debug\net8.0\refint\ProjectManagement.Domain.dll
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\ProjectManagement.Domain\obj\Debug\net8.0\ProjectManagement.Domain.pdb
