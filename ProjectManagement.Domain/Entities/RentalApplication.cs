@@ -13,7 +13,7 @@ namespace ProjectManagement.Domain.Entities
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string Status { get; set; } // "На рассмотрении", "Одобрено" и т.д.
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         public string UserId { get; set; }
         public User User { get; set; }
         public int CarId { get; set; }

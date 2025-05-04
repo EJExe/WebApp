@@ -856,3 +856,4 @@ D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\refin
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.pdb
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.genruntimeconfig.cache
 D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\ref\Lising.dll
+D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\obj\Debug\net8.0\Lising.MvcApplicationPartsAssemblyInfo.cs

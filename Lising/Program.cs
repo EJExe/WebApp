@@ -34,6 +34,7 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRentalApplicationRepository, RentalApplicationRepository>();
 
 // Регистрация сервисов
 builder.Services.AddScoped<BodyTypeService>();
@@ -47,6 +48,9 @@ builder.Services.AddScoped<OrderService>();
 builder.Services.AddScoped<PaymentService>();
 builder.Services.AddScoped<ReviewService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<RentalApplicationService>();
+builder.Services.AddScoped<ReservationService>();
+builder.Services.AddScoped<ReservationRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
@@ -86,20 +90,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("admin"));
-    //options.DefaultPolicy = new AuthorizationPolicyBuilder()
-    //    .RequireAuthenticatedUser() // Требует аутентификации для всех эндпоинтов
-    //    .Build();
+    
 });
-//builder.Services.AddAuthorization(options =>
-//{
-//    options.DefaultPolicy = new AuthorizationPolicyBuilder()
-//        .RequireAuthenticatedUser()
-//        .Build();
 
-//    options.AddPolicy("AdminOnly", policy => policy
-//        .RequireAuthenticatedUser()
-//        .RequireRole("admin"));
-//});
 
 
 builder.Services.AddEndpointsApiExplorer();
@@ -121,6 +114,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(
+        @"D:\UNIVERS\3КУРС\3.2\Садыков\ASPNETCore\Lising\images\cars"),
+    RequestPath = "/images/cars" // URL-путь для доступа к файлам
+});
 //app.UseAuthorization();
 
 //app.MapControllers();

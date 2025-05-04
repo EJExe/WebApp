@@ -19,7 +19,7 @@ namespace ProjectManagement.Domain.Entities
         public string Country { get; set; } // Страна производитель
 
         [Url]
-        public string LogoUrl { get; set; } // Ссылка на логотип
+        public string LogoUrl { get; set; } = " "; // Ссылка на логотип
 
         public List<Car> Cars { get; set; } // Навигационное свойство
     }

@@ -24,3 +24,8 @@ secrets.json
 # Ignore other temporary files
 Thumbs.db
 *.tmp
+
+# Ignore media files (images, videos, audio)
+*.jpg
+*.jpeg
+*.png

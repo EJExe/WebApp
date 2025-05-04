@@ -14,14 +14,14 @@ namespace ProjectManagement.Domain.Entities
 
         [Required]
         [MaxLength(100)]
-        public override string UserName { get; set; }
+        public override string UserName { get; set; } = null!;
 
         [Required]
         [EmailAddress]
         [MaxLength(100)]
-        public string Email { get; set; }
+        public new string Email { get; set; } = null!;
 
-        
+
 
         [Required]
         [MaxLength(20)]
@@ -32,6 +32,6 @@ namespace ProjectManagement.Domain.Entities
 
         // Навигационные свойства
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
-        public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
     }
 }

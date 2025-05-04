@@ -20,17 +20,6 @@ namespace ProjectManagement.Infrastructure.Repositories
         {
             return await _context.Cars.FindAsync(id);
         }
-        public async Task<IEnumerable<Car>> GetCarsWithDetailsAsync()
-        {
-            return await _context.Cars
-                .Include(c => c.Brand)
-                .Include(c => c.FuelType)
-                .Include(c => c.DriveType)
-                .Include(c => c.Category)
-                .Include(c => c.BodyType)
-                .Include(c => c.Features)
-                .ToListAsync();
-        }
 
         public async Task<Car> GetCarWithDetailsAsync(int id)
         {
@@ -44,10 +33,21 @@ namespace ProjectManagement.Infrastructure.Repositories
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
 
-
         public async Task<IEnumerable<Car>> GetCarsAsync()
         {
             return await _context.Cars.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Car>> GetCarsWithDetailsAsync()
+        {
+            return await _context.Cars
+                .Include(c => c.Brand)
+                .Include(c => c.FuelType)
+                .Include(c => c.DriveType)
+                .Include(c => c.Category)
+                .Include(c => c.BodyType)
+                .Include(c => c.Features)
+                .ToListAsync();
         }
 
         public async Task AddCarAsync(Car car)
@@ -59,7 +59,7 @@ namespace ProjectManagement.Infrastructure.Repositories
         public async Task UpdateCarAsync(Car car)
         {
             _context.Entry(car).State = EntityState.Modified;
-            //await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteCarAsync(int id)

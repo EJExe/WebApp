@@ -20,6 +20,7 @@ namespace ProjectManagement.Infrastructure.Data
         public DbSet<FuelType> FuelTypes { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<RentalApplication> RentalApplications { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -115,6 +116,18 @@ namespace ProjectManagement.Infrastructure.Data
                     .HasForeignKey(ra => ra.CarId)
                     .OnDelete(DeleteBehavior.Restrict);
             });
+
+            modelBuilder.Entity<Order>()
+                .Property(o => o.TotalCost)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<RentalApplication>()
+                .Property(r => r.Price)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Car>()
+                .Property(c => c.PricePerDay)
+                .HasPrecision(18, 2);
 
             //Дополнительные индексы
             modelBuilder.Entity<CarFeature>().HasIndex(cf => cf.Name).IsUnique();

@@ -8,8 +8,8 @@ namespace ProjectManagement.Application.DTOs
 {
     public class CarSearchResultDto
     {
-        public List<CarDto> Cars { get; set; }
-        public int TotalCount { get; set; } // Общее количество найденных авто
+        public IEnumerable<CarDto> Cars { get; set; }
+        public int TotalCount { get; set; }
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
     }

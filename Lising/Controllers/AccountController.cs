@@ -8,6 +8,8 @@ using ProjectManagement.Domain.Entities;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
+using ProjectManagement.Application.DTOs;
+using System.Data;
 
 namespace ProjectManagement.Api.Controllers
 {
@@ -35,12 +37,22 @@ namespace ProjectManagement.Api.Controllers
         public async Task<IActionResult> Register(RegisterModel model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            //var user = new User { UserName = model.UserName, Email = model.Email };
-            var user = new User { UserName = model.UserName, Email = model.Email, Role = model.Role };
+            
+            var user = new User { UserName = model.UserName, Email = model.Email, Role = "admin" };
             var result = await _userManager.CreateAsync(user, model.Password);
+
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, model.Role);
+                // Проверка, существует ли роль Client, и создание, если отсутствует
+                if (!await _roleManager.RoleExistsAsync("Client"))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole("Client"));
+                }
+
+                // Назначение роли Client
+                await _userManager.AddToRoleAsync(user, "admin");
+
+                //await _userManager.AddToRoleAsync(user, model.Role);
                 //await _userManager.AddToRoleAsync(user, "Client");
                 return Ok(new { Message = "User registered successfully" });
             }
@@ -83,6 +95,24 @@ namespace ProjectManagement.Api.Controllers
             string userRole = roles.FirstOrDefault();
             return Ok(new { message = "Сессия активна", userName = usr.UserName, userRole });
 
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPatch("users/{id}/role")]
+        public async Task<IActionResult> UpdateUserRole(string id, [FromBody] UpdateUserRoleDto dto)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+                return NotFound(new { Message = "User not found" });
+
+            var currentRoles = await _userManager.GetRolesAsync(user);
+            await _userManager.RemoveFromRolesAsync(user, currentRoles);
+            await _userManager.AddToRoleAsync(user, dto.Role);
+
+            user.Role = dto.Role;
+            await _userManager.UpdateAsync(user);
+
+            return NoContent();
         }
 
         private string GenerateJwtToken(User user)

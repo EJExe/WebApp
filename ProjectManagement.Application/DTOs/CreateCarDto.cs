@@ -9,7 +9,7 @@ namespace ProjectManagement.Application.DTOs
 {
     public class CreateCarDto
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public int BrandId { get; set; }
         public int FuelTypeId { get; set; }
         public int DriveTypeId { get; set; }
@@ -22,11 +22,10 @@ namespace ProjectManagement.Application.DTOs
         public string Color { get; set; }
         public int Seats { get; set; }
         public decimal PricePerDay { get; set; }
-        public string ImageUrl { get; set; }
-
-        public double Latitude { get; set; }  // Широта
-
-        public double Longitude { get; set; } // Долгота
+        public string ImagePath { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public bool IsLeasingDisabled { get; set; }
     }
 
    

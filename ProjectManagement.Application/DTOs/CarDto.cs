@@ -28,9 +28,9 @@ namespace ProjectManagement.Application.DTOs
         public string Color { get; set; }
         public int Seats { get; set; }
         public decimal PricePerDay { get; set; }
-        public double Latitude { get; set; }  // Широта
-
-        public double Longitude { get; set; } // Долгота
-        public string ImageUrl { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public string ImagePath { get; set; } = "/images/cars/default.jpg";
+        public bool IsAvailable { get; set; }
     }
 }

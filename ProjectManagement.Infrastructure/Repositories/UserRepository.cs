@@ -22,7 +22,7 @@ namespace ProjectManagement.Infrastructure.Repositories
 
         public async Task<IEnumerable<User>> GetAllAsync()
         {
-            return _userManager.Users.ToList(); // UserManager.Users возвращает IQueryable<User>
+            return await _userManager.Users.ToListAsync(); // UserManager.Users возвращает IQueryable<User>
         }
 
         public async Task<User> GetByIdAsync(string id)

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjectManagement.Application.DTOs;
 using ProjectManagement.Application.Services;
+using System.Security.Claims;
 
 namespace ProjectManagement.Api.Controllers
 {
@@ -89,6 +90,31 @@ namespace ProjectManagement.Api.Controllers
             catch (KeyNotFoundException)
             {
                 return NotFound();
+            }
+        }
+
+        [Authorize]
+        [HttpPatch("{id}/status")]
+        public async Task<IActionResult> UpdateOrderStatus(int id, [FromBody] UpdateOrderStatusDto dto)
+        {
+            try
+            {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var userRoles = User.FindAll(ClaimTypes.Role).Select(c => c.Value).ToList();
+                await _orderService.UpdateOrderStatusAsync(id, dto.Status, userId, userRoles);
+                return NoContent();
+            }
+            catch (KeyNotFoundException)
+            {
+                return NotFound();
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Forbid();
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
             }
         }
     }

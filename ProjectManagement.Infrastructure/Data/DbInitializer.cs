@@ -38,6 +38,39 @@ namespace ProjectManagement.Infrastructure.Data
                 }
             }
 
+            if (!await context.Reservations.AnyAsync())
+            {
+                var user = await userManager.FindByNameAsync("user");
+                var car = await context.Cars.FirstOrDefaultAsync();
+                if (user != null && car != null)
+                {
+                    var reservation = new Reservation
+                    {
+                        UserId = user.Id,
+                        CarId = car.Id,
+                        StartDate = DateTime.UtcNow.AddDays(1),
+                        EndDate = DateTime.UtcNow.AddDays(3),
+                        Status = "Pending",
+                        CreatedAt = DateTime.UtcNow
+                    };
+                    await context.Reservations.AddAsync(reservation);
+                }
+            }
+
+            try
+            {
+                await context.SaveChangesAsync();
+            }
+            catch (DbUpdateException ex)
+            {
+                Console.WriteLine($"Ошибка при сохранении начальных данных: {ex.Message}");
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine($"Inner exception: {ex.InnerException.Message}");
+                }
+                throw;
+            }
+
             // Типы топлива (FuelTypes)
             var fuelTypes = new List<FuelType>
             {
@@ -52,6 +85,23 @@ namespace ProjectManagement.Infrastructure.Data
                 if (!await context.FuelTypes.AnyAsync(ft => ft.Name == fuelType.Name))
                 {
                     await context.FuelTypes.AddAsync(fuelType);
+                }
+            }
+
+            // Бренды (Brands)
+            var brands = new List<Brand>
+            {
+                new Brand { Name = "BMW", Country = "Германия" },
+                new Brand { Name = "Audi", Country = "Германия" },
+                new Brand { Name = "Toyota", Country = "Япония" },
+                new Brand { Name = "Lada", Country = "Россия" }
+            };
+
+            foreach (var brand in brands)
+            {
+                if (!await context.Brands.AnyAsync(ft => ft.Name == brand.Name))
+                {
+                    await context.Brands.AddAsync(brand);
                 }
             }
 

@@ -64,6 +64,24 @@ namespace ProjectManagement.Application.Services
 
         public async Task<OrderDto> CreateOrderAsync(OrderDto orderDto)
         {
+            // Проверка существующих заказов
+            var conflictingOrders = await _context.Orders
+                .Where(o => o.CarId == orderDto.CarId &&
+                            o.Status != "Cancelled" && o.Status != "Completed" &&
+                            (orderDto.StartDate <= o.EndDate && orderDto.EndDate >= o.StartDate))
+                .AnyAsync();
+
+            if (conflictingOrders)
+                throw new InvalidOperationException("Car is not available for the selected dates.");
+
+            // Проверка, что автомобиль существует и доступен
+            var car = await _carRepository.GetCarByIdAsync(orderDto.CarId);
+            if (car == null || car.IsLeasingDisabled)
+                throw new InvalidOperationException("Car is not available.");
+
+            var days = (orderDto.EndDate - orderDto.StartDate).Days + 1;
+            var totalCost = car.PricePerDay * days;
+
             var order = new Order
             {
                 CarId = orderDto.CarId,
@@ -74,17 +92,13 @@ namespace ProjectManagement.Application.Services
             };
 
             await _orderRepository.AddOrderAsync(order);
-
-            // Явная загрузка связанных данных
             var createdOrder = await _context.Orders
-                .Include(o => o.Car)
-                    .ThenInclude(c => c.Brand)
-                .Include(o => o.Car)
-                    .ThenInclude(c => c.Features)
+                .Include(o => o.Car).ThenInclude(c => c.Brand)
+                .Include(o => o.Car).ThenInclude(c => c.Features)
                 .Include(o => o.User)
                 .FirstOrDefaultAsync(o => o.OrderId == order.OrderId);
 
-            return MapToDto(createdOrder); // Ваш метод маппинга с заполнением car и user
+            return MapToDto(createdOrder);
         }
 
 
@@ -118,6 +132,32 @@ namespace ProjectManagement.Application.Services
             };
         }
 
+        public async Task UpdateOrderStatusAsync(int orderId, string newStatus, string userId, IList<string> userRoles)
+        {
+            var order = await _orderRepository.GetOrderByIdAsync(orderId);
+            if (order == null)
+                throw new KeyNotFoundException("Order not found");
+
+            // Проверка прав
+            if (!userRoles.Contains("admin") && order.UserId != userId)
+                throw new UnauthorizedAccessException("You are not authorized to update this order.");
+
+            // Валидация перехода статусов
+            var validTransitions = new Dictionary<string, List<string>>
+            {
+                { "Pending", new List<string> { "Confirmed", "Cancelled" } },
+                { "Confirmed", new List<string> { "InProgress", "Cancelled" } },
+                { "InProgress", new List<string> { "Completed", "Cancelled" } },
+                { "Completed", new List<string>() },
+                { "Cancelled", new List<string>() }
+            };
+
+            if (!validTransitions[order.Status].Contains(newStatus))
+                throw new InvalidOperationException($"Cannot transition from {order.Status} to {newStatus}.");
+
+            order.Status = newStatus;
+            await _orderRepository.UpdateOrderAsync(order);
+        }
         private OrderDto MapToDto(Order order)
         {
             return new OrderDto
