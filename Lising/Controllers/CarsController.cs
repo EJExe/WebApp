@@ -97,7 +97,7 @@ namespace ProjectManagement.Api.Controllers
             // Validate image if provided
             if (Image != null)
             {
-                var validTypes = new[] { "image/jpeg", "image/png" };
+                var validTypes = new[] { "image/jpeg", "image/png", "image/jpg" };
                 if (!validTypes.Contains(Image.ContentType))
                     return BadRequest("Invalid image type. Only JPEG and PNG are allowed.");
                 if (Image.Length > 5 * 1024 * 1024) // 5MB limit
@@ -162,54 +162,79 @@ namespace ProjectManagement.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCar(int id, [FromForm] UpdateCarDto dto, [FromForm] IFormFile Image)
         {
-            if (id != dto.Id)
-                return BadRequest(new { Message = "ID mismatch between URL and body" });
-
-            // Обработка изображения
-            if (Image != null)
-            {
-                var validTypes = new[] { "image/jpeg", "image/png" };
-                if (!validTypes.Contains(Image.ContentType))
-                    return BadRequest("Invalid image type. Only JPEG and PNG are allowed.");
-                if (Image.Length > 5 * 1024 * 1024) // 5MB limit
-                    return BadRequest("Image size exceeds 5MB.");
-
-                var fileName = $"{Guid.NewGuid()}_{Image.FileName}";
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "images", "cars", fileName);
-                Directory.CreateDirectory(Path.GetDirectoryName(filePath));
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await Image.CopyToAsync(stream);
-                }
-
-                dto.ImagePath = $"/images/cars/{fileName}";
-            }
-            else if (string.IsNullOrEmpty(dto.ImagePath))
-            {
-                dto.ImagePath = "/images/cars/default.jpg"; // Указываем путь по умолчанию, если изображение не обновлено
-            }
-
             try
             {
+                _logger.LogInformation($"UpdateCar request: id={id}, dto={System.Text.Json.JsonSerializer.Serialize(dto)}, Image={(Image != null ? Image.FileName : "null")}");
+
+                if (id != dto.Id)
+                {
+                    _logger.LogWarning($"ID mismatch: URL id={id}, DTO id={dto.Id}");
+                    return BadRequest(new { Message = "ID mismatch between URL and body" });
+                }
+
+                // Проверка обязательных полей
+                if (dto.BrandId <= 0) return BadRequest(new { Message = "Invalid BrandId" });
+                if (string.IsNullOrEmpty(dto.Model)) return BadRequest(new { Message = "Model is required" });
+                if (dto.Year < 1900) return BadRequest(new { Message = "Invalid Year" });
+                if (dto.BodyTypeId <= 0) return BadRequest(new { Message = "Invalid BodyTypeId" });
+                if (dto.CategoryId <= 0) return BadRequest(new { Message = "Invalid CategoryId" });
+                if (dto.DriveTypeId <= 0) return BadRequest(new { Message = "Invalid DriveTypeId" });
+                if (dto.FuelTypeId <= 0) return BadRequest(new { Message = "Invalid FuelTypeId" });
+
+                // Логирование входных данных
+                _logger.LogInformation($"Received UpdateCar request: id={id}, dto.Id={dto.Id}, IsLeasingDisabled={dto.IsLeasingDisabled}, ImagePath={dto.ImagePath}, Image={(Image != null ? Image.FileName : "null")}");
+
+                // Обработка изображения
+                if (Image != null)
+                {
+                    var validTypes = new[] { "image/jpeg", "image/png", "image/jpg" };
+                    if (!validTypes.Contains(Image.ContentType)) { 
+                        _logger.LogWarning($"Invalid image type: {Image.ContentType}");
+                        return BadRequest(new { Message = "Invalid image type. Only JPEG and PNG are allowed." });
+                    }
+                    if (Image.Length > 5 * 1024 * 1024)
+                    {
+                        _logger.LogWarning($"Image size exceeds 5MB: {Image.Length} bytes");
+                        return BadRequest(new { Message = "Image size exceeds 5MB." });
+                    }
+
+                    var fileName = $"{Guid.NewGuid()}_{Image.FileName}";
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "images", "cars", fileName);
+                    Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await Image.CopyToAsync(stream);
+                    }
+
+                    dto.ImagePath = $"/images/cars/{fileName}";
+                }
+                else if (string.IsNullOrEmpty(dto.ImagePath))
+                {
+                    dto.ImagePath = "/images/cars/default.jpg";
+                }
+
                 await _carService.UpdateCarAsync(id, dto, Image);
                 return NoContent();
             }
             catch (KeyNotFoundException ex)
             {
-                return NotFound(new { ex.Message });
+                _logger.LogWarning(ex, "Car not found");
+                return NotFound(new { Message = ex.Message });
             }
             catch (ArgumentException ex)
             {
-                return BadRequest(new { ex.Message });
+                _logger.LogWarning(ex, "Invalid argument");
+                return BadRequest(new { Message = ex.Message });
             }
-            catch (ApplicationException ex)
+            catch (Exception ex)
             {
-                _logger.LogError(ex, "Car update error");
+                _logger.LogError(ex, "Unexpected error during car update");
                 return StatusCode(500, new
                 {
-                    Message = "Operation failed",
-                    Details = ex.InnerException?.Message
+                    Message = "An unexpected error occurred",
+                    Details = ex.Message,
+                    InnerException = ex.InnerException?.Message
                 });
             }
         }

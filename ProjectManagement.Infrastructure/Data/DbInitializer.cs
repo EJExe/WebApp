@@ -11,6 +11,7 @@ namespace ProjectManagement.Infrastructure.Data
 {
     public class DbInitializer
     {
+
         public static async Task Initialize(AppDbContext context, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
             context.Database.EnsureCreated();

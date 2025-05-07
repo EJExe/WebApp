@@ -25,5 +25,7 @@ namespace ProjectManagement.Application.DTOs
         public int PageSize { get; set; } = 10;
         public int? MinYear { get; set; }
         public int? MaxYear { get; set; }
+        public int? MinPrice { get; set; }
+        public int? MaxPrice { get; set; }
     }
 }

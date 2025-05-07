@@ -21,7 +21,9 @@ namespace ProjectManagement.Domain.Entities
         [MaxLength(100)]
         public new string Email { get; set; } = null!;
 
+        public string Phone { get; set; } = " ";
 
+        public string Licence { get; set; } = " ";
 
         [Required]
         [MaxLength(20)]

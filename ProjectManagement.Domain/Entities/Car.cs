@@ -29,7 +29,7 @@ namespace ProjectManagement.Domain.Entities
         public CarDriveType DriveType { get; set; }
         public CarCategory Category { get; set; }
         public BodyType BodyType { get; set; }
-        public List<CarFeature> Features { get; set; } = new();
+        public ICollection<CarFeature> Features { get; set; } = new List<CarFeature>();
 
     }
 }
