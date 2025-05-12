@@ -29,8 +29,7 @@ namespace ProjectManagement.Domain.Entities
         [MaxLength(20)]
         public string Role { get; set; } // Роль: Client или admin
 
-        //[JsonIgnore]
-        //public List<RentalApplication> Applications { get; set; }
+       
 
         // Навигационные свойства
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();

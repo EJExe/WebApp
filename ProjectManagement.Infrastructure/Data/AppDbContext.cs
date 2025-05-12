@@ -117,9 +117,7 @@ namespace ProjectManagement.Infrastructure.Data
                     .OnDelete(DeleteBehavior.Restrict);
             });
 
-            modelBuilder.Entity<Order>()
-                .Property(o => o.TotalCost)
-                .HasPrecision(18, 2);
+            
 
             modelBuilder.Entity<RentalApplication>()
                 .Property(r => r.Price)

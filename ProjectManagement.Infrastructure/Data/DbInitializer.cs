@@ -95,7 +95,12 @@ namespace ProjectManagement.Infrastructure.Data
                 new Brand { Name = "BMW", Country = "Германия" },
                 new Brand { Name = "Audi", Country = "Германия" },
                 new Brand { Name = "Toyota", Country = "Япония" },
-                new Brand { Name = "Lada", Country = "Россия" }
+                new Brand { Name = "Lada", Country = "Россия" },
+                new Brand { Name = "Ford", Country = "Америка" },
+                new Brand { Name = "Porche", Country = "Германия" },
+                new Brand { Name = "Nissan", Country = "Япония" },
+                new Brand { Name = "Hyundai", Country = "Корея" },
+                new Brand { Name = "Koenigsegg.jpeg", Country = "Германия" }
             };
 
             foreach (var brand in brands)

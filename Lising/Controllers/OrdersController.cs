@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ProjectManagement.Application.DTOs;
 using ProjectManagement.Application.Services;
 using System.Security.Claims;
+using ProjectManagement.Infrastructure.Data;
 
 namespace ProjectManagement.Api.Controllers
 {
@@ -12,110 +13,54 @@ namespace ProjectManagement.Api.Controllers
     {
         private readonly OrderService _orderService;
         private readonly ILogger<OrdersController> _logger;
+        private readonly AppDbContext _context;
 
-        // Внедрение зависимости через конструктор
-        public OrdersController(OrderService orderService,
-            ILogger<OrdersController> logger)
+        public OrdersController(OrderService orderService, ILogger<OrdersController> logger, AppDbContext context)
         {
             _orderService = orderService;
             _logger = logger;
+            _context = context;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<OrderDto>>> GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            try
-            {
-                var orders = await _orderService.GetAllOrdersAsync();
-                return Ok(orders);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Ошибка при получении заказов");
-                return StatusCode(500, "Внутренняя ошибка сервера");
-            }
+            var orders = await _orderService.GetOrdersAsync();
+            return Ok(orders);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrderDto>> GetById(int id)
+        public async Task<IActionResult> Get(int id)
         {
             var order = await _orderService.GetOrderByIdAsync(id);
-            if (order == null) return NotFound();
-            return Ok(order);
+            return order == null ? NotFound() : Ok(order);
         }
 
-        [Authorize(Roles = "admin")]
         [HttpPost]
-        public async Task<IActionResult> CreateOrder([FromBody] OrderDto orderDto)
+        public async Task<IActionResult> Create(OrderDto orderDto)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            try
-            {
-                var createdOrder = await _orderService.CreateOrderAsync(orderDto);
-                return CreatedAtAction(nameof(GetById), new { id = createdOrder.OrderId }, createdOrder);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
-
-        [Authorize(Roles = "admin")]
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateOrder(int id, OrderDto orderDto)
-        {
-            if (id != orderDto.OrderId) return BadRequest();
-            try
-            {
-                await _orderService.UpdateOrderAsync(orderDto);
-                return NoContent();
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
-        }
-
-        [Authorize(Roles = "admin")]
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOrder(int id)
-        {
-            try
-            {
-                await _orderService.DeleteOrderAsync(id);
-                return NoContent();
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
+            await _orderService.AddOrderAsync(orderDto);
+            return CreatedAtAction(nameof(Get), new { id = orderDto.OrderId }, orderDto);
         }
 
         [Authorize]
-        [HttpPatch("{id}/status")]
-        public async Task<IActionResult> UpdateOrderStatus(int id, [FromBody] UpdateOrderStatusDto dto)
+        [HttpPost("{orderId}/complete")]
+        public async Task<IActionResult> CompleteOrder(int orderId)
         {
-            try
-            {
-                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                var userRoles = User.FindAll(ClaimTypes.Role).Select(c => c.Value).ToList();
-                await _orderService.UpdateOrderStatusAsync(id, dto.Status, userId, userRoles);
-                return NoContent();
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                return Forbid();
-            }
-            catch (InvalidOperationException ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
+            /*var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);*/ // Получаем ID пользователя
+            var result = await _orderService.CompleteOrder(orderId);
+
+            return result.IsSuccess ? Ok() : BadRequest(result.Error);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, OrderDto orderDto)
+        {
+            if (id != orderDto.OrderId)
+                return BadRequest();
+
+            await _orderService.UpdateOrderAsync(orderDto);
+            return NoContent();
         }
     }
-}
+} 

@@ -38,7 +38,7 @@ namespace ProjectManagement.Api.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             
-            var user = new User { UserName = model.UserName, Email = model.Email, Role = "admin" };
+            var user = new User { UserName = model.UserName, Email = model.Email, Role = "Client" };
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
@@ -50,7 +50,7 @@ namespace ProjectManagement.Api.Controllers
                 }
 
                 // Назначение роли Client
-                await _userManager.AddToRoleAsync(user, "admin");
+                await _userManager.AddToRoleAsync(user, "Client");
 
                 //await _userManager.AddToRoleAsync(user, model.Role);
                 //await _userManager.AddToRoleAsync(user, "Client");

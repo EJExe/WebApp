@@ -34,59 +34,59 @@ namespace Lising.Controllers
             }
         }
 
-        [Authorize(Roles = "admin")]
-        [HttpGet("popular-cars")]
-        public async Task<ActionResult<IEnumerable<PopularCarDto>>> GetPopularCars(DateTime start, DateTime end)
-        {
-            try
-            {
-                var popularCars = await _context.Orders
-                    .Where(o => o.StartDate >= start && o.EndDate <= end && o.Status != "Cancelled")
-                    .GroupBy(o => o.Car)
-                    .Select(g => new PopularCarDto
-                    {
-                        CarId = g.Key.Id,
-                        CarName = $"{g.Key.Brand.Name} {g.Key.Model}",
-                        OrderCount = g.Count(),
-                        TotalRevenue = g.Sum(o => o.TotalCost)
-                    })
-                    .OrderByDescending(p => p.OrderCount)
-                    .Take(10)
-                    .ToListAsync();
+        //[Authorize(Roles = "admin")]
+        //[HttpGet("popular-cars")]
+        //public async Task<ActionResult<IEnumerable<PopularCarDto>>> GetPopularCars(DateTime start, DateTime end)
+        //{
+        //    try
+        //    {
+        //        var popularCars = await _context.Orders
+        //            .Where(o => o.StartDate >= start && o.EndDate <= end && o.Status != "Cancelled")
+        //            .GroupBy(o => o.Car)
+        //            .Select(g => new PopularCarDto
+        //            {
+        //                CarId = g.Key.Id,
+        //                CarName = $"{g.Key.Brand.Name} {g.Key.Model}",
+        //                OrderCount = g.Count(),
+        //                TotalRevenue = g.Sum(o => o.TotalCost)
+        //            })
+        //            .OrderByDescending(p => p.OrderCount)
+        //            .Take(10)
+        //            .ToListAsync();
 
-                return Ok(popularCars);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Internal server error");
-            }
-        }
+        //        return Ok(popularCars);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, "Internal server error");
+        //    }
+        //}
 
-        [Authorize(Roles = "admin")]
-        [HttpGet("user-stats")]
-        public async Task<ActionResult<IEnumerable<UserStatsDto>>> GetUserStats(DateTime start, DateTime end)
-        {
-            try
-            {
-                var userStats = await _context.Users
-                    .Select(u => new UserStatsDto
-                    {
-                        UserId = u.Id,
-                        UserName = u.UserName,
-                        OrderCount = u.Orders.Count(o => o.StartDate >= start && o.EndDate <= end && o.Status != "Cancelled"),
-                        TotalSpent = u.Orders
-                            .Where(o => o.StartDate >= start && o.EndDate <= end && o.Status != "Cancelled")
-                            .Sum(o => o.TotalCost),
-                        AverageRating = u.Reviews.Any() ? u.Reviews.Average(r => r.Rating) : null
-                    })
-                    .ToListAsync();
+        //[Authorize(Roles = "admin")]
+        //[HttpGet("user-stats")]
+        //public async Task<ActionResult<IEnumerable<UserStatsDto>>> GetUserStats(DateTime start, DateTime end)
+        //{
+        //    try
+        //    {
+        //        var userStats = await _context.Users
+        //            .Select(u => new UserStatsDto
+        //            {
+        //                UserId = u.Id,
+        //                UserName = u.UserName,
+        //                OrderCount = u.Orders.Count(o => o.StartDate >= start && o.EndDate <= end && o.Status != "Cancelled"),
+        //                TotalSpent = u.Orders
+        //                    .Where(o => o.StartDate >= start && o.EndDate <= end && o.Status != "Cancelled")
+        //                    .Sum(o => o.TotalCost),
+        //                AverageRating = u.Reviews.Any() ? u.Reviews.Average(r => r.Rating) : null
+        //            })
+        //            .ToListAsync();
 
-                return Ok(userStats);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Internal server error");
-            }
-        }
+        //        return Ok(userStats);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, "Internal server error");
+        //    }
+        //}
     }
 }

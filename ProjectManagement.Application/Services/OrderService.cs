@@ -29,164 +29,75 @@ namespace ProjectManagement.Application.Services
             _logger = logger;
         }
 
+        public async Task<IEnumerable<OrderDto>> GetOrdersAsync()
+        {
+            var orders = await _orderRepository.GetOrdersAsync();
+            return orders.Where(o => o.IsActive).Select(o => new OrderDto
+            {
+                OrderId = o.OrderId,
+                UserId = o.UserId,
+                CarId = o.CarId,
+                StartDate = o.StartDate,
+                IsActive = o.IsActive,
+                Status = o.Status
+            });
+        }
+
         public async Task<OrderDto> GetOrderByIdAsync(int id)
         {
             var order = await _orderRepository.GetOrderByIdAsync(id);
-            if (order == null) return null;
-
-            return new OrderDto
+            return order == null ? null : new OrderDto
             {
                 OrderId = order.OrderId,
-                StartDate = order.StartDate,
-                EndDate = order.EndDate,
-                Status = order.Status,
-                // Добавьте CarId и UserId
-                CarId = order.CarId,
                 UserId = order.UserId,
-                Car = order.Car != null ? MapToCarDto(order.Car) : null,
-                User = order.User != null ? MapToUserDto(order.User) : null
+                CarId = order.CarId,
+                StartDate = order.StartDate,
+                IsActive = order.IsActive,
+                Status = order.Status
             };
         }
 
-        public async Task<IEnumerable<OrderDto>> GetAllOrdersAsync()
+        public async Task AddOrderAsync(OrderDto orderDto)
         {
-            try
-            {
-                var orders = await _orderRepository.GetAllOrdersAsync();
-                return orders.Select(MapToDto);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Ошибка при получении списка заказов");
-                throw;
-            }
-        }
-
-        public async Task<OrderDto> CreateOrderAsync(OrderDto orderDto)
-        {
-            // Проверка существующих заказов
-            var conflictingOrders = await _context.Orders
-                .Where(o => o.CarId == orderDto.CarId &&
-                            o.Status != "Cancelled" && o.Status != "Completed" &&
-                            (orderDto.StartDate <= o.EndDate && orderDto.EndDate >= o.StartDate))
-                .AnyAsync();
-
-            if (conflictingOrders)
-                throw new InvalidOperationException("Car is not available for the selected dates.");
-
-            // Проверка, что автомобиль существует и доступен
-            var car = await _carRepository.GetCarByIdAsync(orderDto.CarId);
-            if (car == null || car.IsLeasingDisabled)
-                throw new InvalidOperationException("Car is not available.");
-
-            var days = (orderDto.EndDate - orderDto.StartDate).Days + 1;
-            var totalCost = car.PricePerDay * days;
-
             var order = new Order
             {
-                CarId = orderDto.CarId,
                 UserId = orderDto.UserId,
+                CarId = orderDto.CarId,
                 StartDate = orderDto.StartDate,
-                EndDate = orderDto.EndDate,
+                IsActive = orderDto.IsActive,
                 Status = "Pending"
             };
-
             await _orderRepository.AddOrderAsync(order);
-            var createdOrder = await _context.Orders
-                .Include(o => o.Car).ThenInclude(c => c.Brand)
-                .Include(o => o.Car).ThenInclude(c => c.Features)
-                .Include(o => o.User)
-                .FirstOrDefaultAsync(o => o.OrderId == order.OrderId);
+            orderDto.OrderId = order.OrderId;
+        }
 
-            return MapToDto(createdOrder);
+        public async Task<Result> CompleteOrder(int orderId)
+        {
+            var order = await _orderRepository.GetOrderByIdAsync(orderId); 
+            if (order == null) return Result.Failure("Заказ не найден");
+
+
+            order.IsActive = false;
+            order.Status = "Completed";
+
+            await _orderRepository.UpdateOrderAsync(order); 
+
+            return Result.Success();
         }
 
 
         public async Task UpdateOrderAsync(OrderDto orderDto)
         {
             var order = await _orderRepository.GetOrderByIdAsync(orderDto.OrderId);
-            order.Status = orderDto.Status;
-            order.StartDate = orderDto.StartDate;
-            order.EndDate = orderDto.EndDate;
-
-            await _orderRepository.UpdateOrderAsync(order);
-        }
-
-        private CarDto MapToCarDto(Car car)
-        {
-            return new CarDto
+            if (order != null)
             {
-                Id = car.Id,
-                Model = car.Model,
-                Year = car.Year,
-            };
-        }
-
-        private UserDto MapToUserDto(User user)
-        {
-            return new UserDto
-            {
-                Id = user.Id,
-                UserName = user.UserName,
-                Email = user.Email
-            };
-        }
-
-        public async Task UpdateOrderStatusAsync(int orderId, string newStatus, string userId, IList<string> userRoles)
-        {
-            var order = await _orderRepository.GetOrderByIdAsync(orderId);
-            if (order == null)
-                throw new KeyNotFoundException("Order not found");
-
-            // Проверка прав
-            if (!userRoles.Contains("admin") && order.UserId != userId)
-                throw new UnauthorizedAccessException("You are not authorized to update this order.");
-
-            // Валидация перехода статусов
-            var validTransitions = new Dictionary<string, List<string>>
-            {
-                { "Pending", new List<string> { "Confirmed", "Cancelled" } },
-                { "Confirmed", new List<string> { "InProgress", "Cancelled" } },
-                { "InProgress", new List<string> { "Completed", "Cancelled" } },
-                { "Completed", new List<string>() },
-                { "Cancelled", new List<string>() }
-            };
-
-            if (!validTransitions[order.Status].Contains(newStatus))
-                throw new InvalidOperationException($"Cannot transition from {order.Status} to {newStatus}.");
-
-            order.Status = newStatus;
-            await _orderRepository.UpdateOrderAsync(order);
-        }
-        private OrderDto MapToDto(Order order)
-        {
-            return new OrderDto
-            {
-                OrderId = order.OrderId,
-                StartDate = order.StartDate,
-                EndDate = order.EndDate,
-                Status = order.Status,
-                UserId = order.UserId,
-                CarId = order.CarId,
-                // Добавьте маппинг связанных сущностей
-                Car = order.Car != null ? new CarDto
-                {
-                    Id = order.Car.Id,
-                    Model = order.Car.Model,
-                    // ... остальные поля
-                } : null,
-                User = order.User != null ? new UserDto
-                {
-                    Id = order.User.Id,
-                    UserName = order.User.UserName,
-                    Email = order.User.Email
-                } : null
-            };
-        }
-
-        public async Task DeleteOrderAsync(int id)
-        {
-            await _orderRepository.DeleteOrderAsync(id);
+                order.UserId = orderDto.UserId;
+                order.CarId = orderDto.CarId;
+                order.StartDate = orderDto.StartDate;
+                order.IsActive = orderDto.IsActive;
+                order.Status = orderDto.Status;
+                await _orderRepository.UpdateOrderAsync(order);
+            }
         }
     }
-}
+} 
