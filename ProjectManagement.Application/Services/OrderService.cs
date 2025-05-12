@@ -71,6 +71,33 @@ namespace ProjectManagement.Application.Services
             orderDto.OrderId = order.OrderId;
         }
 
+        public async Task<Result> ConfirmOrder(int orderId)
+        {
+            var order = await _orderRepository.GetOrderByIdAsync(orderId);
+            if (order == null) return Result.Failure("Заказ не найден");
+
+            if (order.Status != "Pending")
+                return Result.Failure("Невозможно подтвердить заказ в текущем статусе");
+
+            order.Status = "Confirmed";
+            await _orderRepository.UpdateOrderAsync(order);
+            return Result.Success();
+        }
+
+        public async Task<Result> CancelOrder(int orderId)
+        {
+            var order = await _orderRepository.GetOrderByIdAsync(orderId);
+            if (order == null) return Result.Failure("Заказ не найден");
+
+            if (order.Status != "Pending")
+                return Result.Failure("Невозможно отменить заказ в текущем статусе");
+
+            order.Status = "Cancelled";
+            order.IsActive = false;
+            await _orderRepository.UpdateOrderAsync(order);
+            return Result.Success();
+        }
+
         public async Task<Result> CompleteOrder(int orderId)
         {
             var order = await _orderRepository.GetOrderByIdAsync(orderId); 

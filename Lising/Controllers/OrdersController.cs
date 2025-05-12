@@ -53,6 +53,22 @@ namespace ProjectManagement.Api.Controllers
             return result.IsSuccess ? Ok() : BadRequest(result.Error);
         }
 
+        
+        [HttpPut("{orderId}/confirm")]
+        public async Task<IActionResult> ConfirmOrder(int orderId)
+        {
+            var result = await _orderService.ConfirmOrder(orderId);
+            return result.IsSuccess ? Ok() : BadRequest(result.Error);
+        }
+
+        
+        [HttpPut("{orderId}/cancel")]
+        public async Task<IActionResult> CancelOrder(int orderId)
+        {
+            var result = await _orderService.CancelOrder(orderId);
+            return result.IsSuccess ? Ok() : BadRequest(result.Error);
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, OrderDto orderDto)
         {
