@@ -43,11 +43,11 @@ namespace ProjectManagement.Api.Controllers
             return CreatedAtAction(nameof(Get), new { id = orderDto.OrderId }, orderDto);
         }
 
-        [Authorize]
+        
         [HttpPost("{orderId}/complete")]
         public async Task<IActionResult> CompleteOrder(int orderId)
         {
-            /*var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);*/ // Получаем ID пользователя
+            
             var result = await _orderService.CompleteOrder(orderId);
 
             return result.IsSuccess ? Ok() : BadRequest(result.Error);
